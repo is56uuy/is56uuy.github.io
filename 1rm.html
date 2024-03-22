@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title></title>
+		<title>One-Rep-Max tool</title>
 
 		<style>
 			body {
@@ -98,6 +98,7 @@
 			<thead>
 				<tr>
 					<th>New min rep</th>
+					<!-- also edit the script below if you change these -->
 					<th>+1.25 kg</th>
 					<th>+2.5 kg</th>
 					<th>+5 kg</th>
@@ -131,7 +132,6 @@
 					result.textContent = `1RM: ${oneRepMax.toFixed(2)} kg`;
 
 					const offsets = [-10, -5, -2.5, 2.5, 5, 10];
-
 					offsets.forEach(offset => {
 						const estimatedReps = (oneRepMax / (weight + offset) - 1) * 30;
 						const row = `<tr><td>${(offset < 0 ? "":"+") + offset} kg</td><td>${estimatedReps.toFixed(1)}</td></tr>`;
